@@ -1,28 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Clinica
+﻿namespace Clinica
 {
-    internal class Paciente
+    internal class Paciente : object
     {
-        public int codp { get; set; }
-        public string nome { get; set; }
-        public int idade { get; set; }
-        public string cpf { get; set; }
-        public string cidade { get; set; }
-        public string doenca { get; set; }
+        public int Codp { get; set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+        public string Cpf { get; set; }
+        public string Cidade { get; set; }
+        public string Doenca { get; set; }
 
         public override string ToString()
         {
-            return 
-                this.codp + "\n" +
-                this.nome + "\n" +
-                this.idade + "\n" +
-                this.cpf + "\n" 
-                ;
+            return this.Codp + "\n" + this.Nome + "\n" + this.Idade + "\n" + this.Cpf + "\n";
         }
     }
 }

@@ -73,7 +73,6 @@
             this.titulo_label.Size = new System.Drawing.Size(156, 24);
             this.titulo_label.TabIndex = 27;
             this.titulo_label.Text = "Editar paciente:";
-            this.titulo_label.Click += new System.EventHandler(this.titulo_label_Click);
             // 
             // doencaValor
             // 
@@ -173,7 +172,7 @@
             this.codigo_label.Text = "Codigo:";
             this.codigo_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // PacientesEditar
+            // PacientesEditarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,7 +192,7 @@
             this.Controls.Add(this.nome_label);
             this.Controls.Add(this.codigoValor);
             this.Controls.Add(this.codigo_label);
-            this.Name = "PacientesEditar";
+            this.Name = "PacientesEditarView";
             this.Text = "PacientesEditar";
             this.Load += new System.EventHandler(this.PacientesEditar_Load);
             this.ResumeLayout(false);

@@ -54,7 +54,6 @@
             this.codigo_label.TabIndex = 0;
             this.codigo_label.Text = "Codigo:";
             this.codigo_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.codigo_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // codigoValor
             // 
@@ -62,7 +61,6 @@
             this.codigoValor.Name = "codigoValor";
             this.codigoValor.Size = new System.Drawing.Size(223, 20);
             this.codigoValor.TabIndex = 1;
-            this.codigoValor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // nomeValor
             // 
@@ -134,7 +132,6 @@
             this.doencaValor.Name = "doencaValor";
             this.doencaValor.Size = new System.Drawing.Size(223, 20);
             this.doencaValor.TabIndex = 11;
-            this.doencaValor.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // doenca_label
             // 
@@ -144,7 +141,6 @@
             this.doenca_label.Size = new System.Drawing.Size(48, 13);
             this.doenca_label.TabIndex = 10;
             this.doenca_label.Text = "Doença:";
-            this.doenca_label.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // titulo_label
             // 
@@ -176,7 +172,7 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // PacientesCriar
+            // PacientesCriarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,7 +192,7 @@
             this.Controls.Add(this.nome_label);
             this.Controls.Add(this.codigoValor);
             this.Controls.Add(this.codigo_label);
-            this.Name = "PacientesCriar";
+            this.Name = "PacientesCriarView";
             this.Text = "PacientesCriar";
             this.Load += new System.EventHandler(this.PacientesCriar_Load);
             this.ResumeLayout(false);
