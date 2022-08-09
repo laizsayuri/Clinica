@@ -62,6 +62,7 @@
             this.funcionarioBtn.TabIndex = 3;
             this.funcionarioBtn.Text = "Funcionários";
             this.funcionarioBtn.UseVisualStyleBackColor = true;
+            this.funcionarioBtn.Click += new System.EventHandler(this.funcionarioBtn_Click);
             // 
             // medicoBtn
             // 
@@ -94,7 +95,6 @@
             this.Controls.Add(this.pacienteBtn);
             this.Name = "InicioView";
             this.Text = "Sistema Clinica";
-            this.Load += new System.EventHandler(this.InicioView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

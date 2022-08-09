@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Funcionarios;
+using System;
 using System.Windows.Forms;
 
 namespace Clinica
@@ -8,19 +9,21 @@ namespace Clinica
         public InicioView()
         {
             InitializeComponent();
-            this.SetVisibleCore(true);
+            SetVisibleCore(true);
         }
 
         private void pacienteBtn_Click(object sender, EventArgs e)
         {
-            PacientesView tela =  new PacientesView();
+            PacientesView tela = new PacientesView();
             tela.Show();
-            this.Hide();
+            Hide();
         }
 
-        private void InicioView_Load(object sender, EventArgs e)
+        private void funcionarioBtn_Click(object sender, EventArgs e)
         {
-
+            FuncionariosView tela = new FuncionariosView();
+            tela.Show();
+            Hide();
         }
     }
 }
