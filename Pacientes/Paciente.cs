@@ -1,6 +1,6 @@
 ﻿namespace Clinica
 {
-    internal class Paciente : object
+    internal class Paciente
     {
         public int Codp { get; set; }
         public string Nome { get; set; }
