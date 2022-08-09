@@ -46,52 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\InicioView.cs">
+    <Compile Include="InicioView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\InicioView.Designer.cs">
+    <Compile Include="InicioView.Designer.cs">
       <DependentUpon>InicioView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MedicosView.cs">
+    <Compile Include="Medicos\MedicosView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MedicosView.Designer.cs">
+    <Compile Include="Medicos\MedicosView.Designer.cs">
       <DependentUpon>MedicosView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Paciente.cs" />
-    <Compile Include="Views\PacientesView.cs">
+    <Compile Include="Pacientes\Paciente.cs" />
+    <Compile Include="Pacientes\PacientesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PacientesView.Designer.cs">
+    <Compile Include="Pacientes\PacientesView.Designer.cs">
       <DependentUpon>PacientesView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PacientesCriarView.cs">
+    <Compile Include="Pacientes\PacientesCriarView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PacientesCriarView.Designer.cs">
+    <Compile Include="Pacientes\PacientesCriarView.Designer.cs">
       <DependentUpon>PacientesCriarView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PacientesEditarView.cs">
+    <Compile Include="Pacientes\PacientesEditarView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PacientesEditarView.Designer.cs">
+    <Compile Include="Pacientes\PacientesEditarView.Designer.cs">
       <DependentUpon>PacientesEditarView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\InicioView.resx">
+    <EmbeddedResource Include="InicioView.resx">
       <DependentUpon>InicioView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MedicosView.resx">
+    <EmbeddedResource Include="Medicos\MedicosView.resx">
       <DependentUpon>MedicosView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PacientesView.resx">
+    <EmbeddedResource Include="Pacientes\PacientesView.resx">
       <DependentUpon>PacientesView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PacientesCriarView.resx">
+    <EmbeddedResource Include="Pacientes\PacientesCriarView.resx">
       <DependentUpon>PacientesCriarView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PacientesEditarView.resx">
+    <EmbeddedResource Include="Pacientes\PacientesEditarView.resx">
       <DependentUpon>PacientesEditarView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,6 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Consultas\" />
+    <Folder Include="Funcionarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
