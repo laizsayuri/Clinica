@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clinica
 {
-    public partial class Inicio : Form
+    public partial class InicioView : Form
     {
-        public Inicio()
+        public InicioView()
         {
             InitializeComponent();
             this.SetVisibleCore(true);
@@ -25,9 +25,14 @@ namespace Clinica
 
         private void pacienteBtn_Click(object sender, EventArgs e)
         {
-            Pacientes tela =  new Pacientes();
+            PacientesView tela =  new PacientesView();
             tela.Show();
             this.Hide();
+        }
+
+        private void InicioView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

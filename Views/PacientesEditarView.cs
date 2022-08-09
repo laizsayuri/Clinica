@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Clinica
 {
-    public partial class PacientesEditar : Form
+    public partial class PacientesEditarView : Form
     {
         
         //INTERVALO ATÉ 10:20
         
         
-        public PacientesEditar(object paciente)
+        public PacientesEditarView(object paciente)
         {
             InitializeComponent();
             Paciente p = (Paciente) paciente;
@@ -52,7 +52,7 @@ namespace Clinica
             ArrayList pacientes = new ArrayList();
             pacientes.Add(paciente);
 
-            Pacientes listagem = new Pacientes(pacientes);
+            PacientesView listagem = new PacientesView(pacientes);
             listagem.Show();
             this.Close();
             

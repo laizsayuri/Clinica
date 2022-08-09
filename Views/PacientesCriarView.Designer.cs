@@ -1,6 +1,6 @@
 ﻿namespace Clinica
 {
-    partial class PacientesCriar
+    partial class PacientesCriarView
     {
         /// <summary>
         /// Required designer variable.

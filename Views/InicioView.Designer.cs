@@ -1,6 +1,6 @@
 ﻿namespace Clinica
 {
-    partial class Inicio
+    partial class InicioView
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -82,7 +82,7 @@
             this.inicioLbl.TabIndex = 4;
             this.inicioLbl.Text = "Bem vindo(a)!";
             // 
-            // Inicio
+            // InicioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,8 +92,9 @@
             this.Controls.Add(this.medicoBtn);
             this.Controls.Add(this.consultaBtn);
             this.Controls.Add(this.pacienteBtn);
-            this.Name = "Inicio";
+            this.Name = "InicioView";
             this.Text = "Sistema Clinica";
+            this.Load += new System.EventHandler(this.InicioView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

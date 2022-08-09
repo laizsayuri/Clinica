@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Clinica
 {
-    public partial class Pacientes : Form
+    public partial class PacientesView : Form
     {
-        public Pacientes()
+        public PacientesView()
         {
             InitializeComponent();
             
         }
-        public Pacientes(ArrayList pacientes)
+        public PacientesView(ArrayList pacientes)
         {
             InitializeComponent();
             this.listagem.DataSource = pacientes;
@@ -52,14 +52,14 @@ namespace Clinica
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Inicio inicio = new Inicio();
+            InicioView inicio = new InicioView();
             inicio.Show();
             this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PacientesCriar pacienteCriar = new PacientesCriar();
+            PacientesCriarView pacienteCriar = new PacientesCriarView();
             pacienteCriar.Show();
             this.Close();
         }

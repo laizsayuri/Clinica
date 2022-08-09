@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clinica
 {
-    public partial class PacientesCriar : Form
+    public partial class PacientesCriarView : Form
     {
-        public PacientesCriar()
+        public PacientesCriarView()
         {
             InitializeComponent();
             
@@ -40,7 +40,7 @@ namespace Clinica
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Pacientes paciente = new Pacientes();
+            PacientesView paciente = new PacientesView();
             paciente.Show();
             this.Close();
         }
@@ -60,7 +60,7 @@ namespace Clinica
             paciente.cpf = this.cpfValor.Text;
             paciente.doenca = this.doencaValor.Text;
 
-            PacientesEditar pacienteEditar = new PacientesEditar(paciente);
+            PacientesEditarView pacienteEditar = new PacientesEditarView(paciente);
 
             pacienteEditar.Show();
             this.Close();
