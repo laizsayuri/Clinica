@@ -173,7 +173,6 @@
             this.Controls.Add(this.listagem);
             this.Name = "PacientesView";
             this.Text = "Pacientes";
-            this.Load += new System.EventHandler(this.Pacientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

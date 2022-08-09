@@ -194,7 +194,6 @@
             this.Controls.Add(this.codigo_label);
             this.Name = "PacientesEditarView";
             this.Text = "PacientesEditar";
-            this.Load += new System.EventHandler(this.PacientesEditar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

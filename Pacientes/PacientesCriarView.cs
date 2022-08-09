@@ -7,36 +7,32 @@ namespace Clinica
     {
         public PacientesCriarView()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             PacientesView paciente = new PacientesView();
             paciente.Show();
-            this.Close();
-        }
-
-        private void PacientesCriar_Load(object sender, EventArgs e)
-        {
-
+            Close();
         }
 
         private void salvar_Click(object sender, EventArgs e)
         {
-            Paciente paciente = new Paciente();
-            paciente.Codp = int.Parse(this.codigoValor.Text);
-            paciente.Nome = this.nomeValor.Text;
-            paciente.Idade = int.Parse(this.idadeValor.Text);
-            paciente.Cidade = this.cidadeValor.Text;
-            paciente.Cpf = this.cpfValor.Text;
-            paciente.Doenca = this.doencaValor.Text;
+            Paciente paciente = new Paciente
+            {
+                Codp = int.Parse(codigoValor.Text),
+                Nome = nomeValor.Text,
+                Idade = int.Parse(idadeValor.Text),
+                Cidade = cidadeValor.Text,
+                Cpf = cpfValor.Text,
+                Doenca = doencaValor.Text
+            };
 
             PacientesEditarView pacienteEditar = new PacientesEditarView(paciente);
 
             pacienteEditar.Show();
-            this.Close();
+            Close();
         }
     }
 }

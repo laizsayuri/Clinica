@@ -15,17 +15,15 @@ namespace Clinica
         public PacientesView(ArrayList pacientes)
         {
             InitializeComponent();
-            this.listagem.DataSource = pacientes;
+            listagem.DataSource = pacientes;
 
             foreach (Paciente p in pacientes)
             {
-                MessageBox.Show(p.ToString());
-               
+                MessageBox.Show(p.ToString());               
             }
-
         }
 
-        //filtrar
+        // filtrar
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -35,19 +33,14 @@ namespace Clinica
         {
             InicioView inicio = new InicioView();
             inicio.Show();
-            this.Close();
+            Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             PacientesCriarView pacienteCriar = new PacientesCriarView();
             pacienteCriar.Show();
-            this.Close();
-        }
-
-        private void Pacientes_Load(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }

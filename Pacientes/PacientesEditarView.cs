@@ -5,42 +5,37 @@ using System.Windows.Forms;
 namespace Clinica
 {
     public partial class PacientesEditarView : Form
-    {                      
-        public PacientesEditarView(object paciente)
+    {
+        public PacientesEditarView(Paciente paciente)
         {
             InitializeComponent();
-            Paciente p = (Paciente) paciente;
 
-            codigoValor.Text = p.Codp.ToString();
-            nomeValor.Text = p.Nome;
-            idadeValor.Text = p.Idade.ToString();
-            cpfValor.Text = p.Cpf;
-            doencaValor.Text = p.Doenca;
-            cidadeValor.Text = p.Cidade;
-        }
-
-        private void PacientesEditar_Load(object sender, EventArgs e)
-        {
-
+            codigoValor.Text = paciente.Codp.ToString();
+            nomeValor.Text = paciente.Nome;
+            idadeValor.Text = paciente.Idade.ToString();
+            cpfValor.Text = paciente.Cpf;
+            doencaValor.Text = paciente.Doenca;
+            cidadeValor.Text = paciente.Cidade;
         }
 
         private void salvar_Click(object sender, EventArgs e)
         {
-            Paciente paciente = new Paciente();
-            paciente.Codp = int.Parse(this.codigoValor.Text);
-            paciente.Nome = this.nomeValor.Text;
-            paciente.Idade = int.Parse(this.idadeValor.Text);
-            paciente.Cidade = this.cidadeValor.Text;
-            paciente.Cpf = this.cpfValor.Text;
-            paciente.Doenca = this.doencaValor.Text;
+            Paciente paciente = new Paciente
+            {
+                Codp = int.Parse(codigoValor.Text),
+                Nome = nomeValor.Text,
+                Idade = int.Parse(idadeValor.Text),
+                Cidade = cidadeValor.Text,
+                Cpf = cpfValor.Text,
+                Doenca = doencaValor.Text
+            };
 
             ArrayList pacientes = new ArrayList();
             pacientes.Add(paciente);
 
             PacientesView listagem = new PacientesView(pacientes);
             listagem.Show();
-            this.Close();
-            
+            Close();
         }
     }
 }

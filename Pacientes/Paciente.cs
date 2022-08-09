@@ -1,6 +1,6 @@
 ﻿namespace Clinica
 {
-    internal class Paciente
+    public class Paciente
     {
         public int Codp { get; set; }
         public string Nome { get; set; }
@@ -11,7 +11,7 @@
 
         public override string ToString()
         {
-            return this.Codp + "\n" + this.Nome + "\n" + this.Idade + "\n" + this.Cpf + "\n";
+            return Codp + "\n" + Nome + "\n" + Idade + "\n" + Cpf + "\n";
         }
     }
 }
