@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Pacientes;
+using System;
 using System.Windows.Forms;
 
 namespace Clinica
@@ -21,7 +22,6 @@ namespace Clinica
         {
             Paciente paciente = new Paciente
             {
-                Codp = int.Parse(codigoValor.Text),
                 Nome = nomeValor.Text,
                 Idade = int.Parse(idadeValor.Text),
                 Cidade = cidadeValor.Text,
@@ -29,10 +29,10 @@ namespace Clinica
                 Doenca = doencaValor.Text
             };
 
-            PacientesEditarView pacienteEditar = new PacientesEditarView(paciente);
-
-            pacienteEditar.Show();
-            Close();
+            PacienteController controller = new PacienteController();
+            controller.Criar(paciente);
+            Hide();
+           
         }
     }
 }

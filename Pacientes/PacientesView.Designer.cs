@@ -64,7 +64,6 @@
             // 
             this.codp.HeaderText = "Codigo";
             this.codp.Name = "codp";
-            this.codp.Visible = false;
             // 
             // nome
             // 
@@ -117,15 +116,17 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(180, 236);
+            this.button3.Location = new System.Drawing.Point(94, 236);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Deletar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -182,12 +183,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView listagem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doenca;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox filtroValor;
         private System.Windows.Forms.Button button2;
@@ -195,5 +190,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doenca;
     }
 }

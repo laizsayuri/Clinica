@@ -13,10 +13,15 @@ namespace Clinica.Pacientes
         public ArrayList All()
         {
             ArrayList lista = new ArrayList();
+
             Paciente paciente;
+
             BancoDeDados bd = new BancoDeDados();
-            string sql = "SELECT * FROM pacientes";
+
+            string sql = "SELECT * FROM pacientes order by codp desc";
+
             MySqlCommand cmd = new MySqlCommand(sql, bd.conectar());
+
             try
             {
                 MySqlDataReader rdr = cmd.ExecuteReader();
@@ -43,12 +48,55 @@ namespace Clinica.Pacientes
 
         public object Create(object objeto)
         {
-            throw new NotImplementedException();
+            Paciente paciente  =  (Paciente)  objeto;
+            BancoDeDados  bd  =  new  BancoDeDados();
+            MySqlConnection  conn  =  bd.conectar();
+            MySqlCommand  cmd  =  new  MySqlCommand();
+
+            try 
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO pacientes (nome, idade, cidade, cpf, doenca)" +
+                    "VALUES (@nome, @idade, @cidade, @cpf, @doenca)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@nome", paciente.Nome);
+                cmd.Parameters.AddWithValue("@idade", paciente.Idade);
+                cmd.Parameters.AddWithValue("@cidade", paciente.Cidade);
+                cmd.Parameters.AddWithValue("@cpf", paciente.Cpf);
+                cmd.Parameters.AddWithValue("@doenca", paciente.Doenca);
+                Console.WriteLine(cmd.CommandText.ToString());
+                cmd.ExecuteNonQuery();
+                int id = int.Parse(cmd.LastInsertedId.ToString());
+                paciente.Codp = id;
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+            return paciente;
         }
 
-        public object Delete(object objeto)
+        public object Delete(object chave)
         {
-            throw new NotImplementedException();
+            Paciente paciente = (Paciente)chave;
+            BancoDeDados bd = new BancoDeDados();
+            MySqlConnection conn = bd.conectar();
+            MySqlCommand cmd = new MySqlCommand();
+
+            try
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "delete from pacientes " + "where codp = @codp";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@codp", paciente.Codp);
+                
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+            return paciente;
         }
 
         public object Read(object chave)
@@ -58,7 +106,35 @@ namespace Clinica.Pacientes
 
         public object Update(object objeto)
         {
-            throw new NotImplementedException();
+            Paciente paciente = (Paciente)objeto;
+            BancoDeDados bd = new BancoDeDados();
+            MySqlConnection conn = bd.conectar();
+            MySqlCommand cmd = new MySqlCommand();
+
+            try
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "update pacientes set nome=@nome," +
+                    "idade = @idade," +
+                    "cidade = @cidade, " +
+                    "cpf = @cpf, " +
+                    "doenca = @doenca " +
+                    "where codp = @codp ";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@nome", paciente.Nome);
+                cmd.Parameters.AddWithValue("@idade", paciente.Idade);
+                cmd.Parameters.AddWithValue("@cidade", paciente.Cidade);
+                cmd.Parameters.AddWithValue("@cpf", paciente.Cpf);
+                cmd.Parameters.AddWithValue("@doenca", paciente.Doenca);
+                cmd.Parameters.AddWithValue("@codp", paciente.Codp);
+                
+                cmd.ExecuteNonQuery();                
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+            return paciente;
         }
     }
 }

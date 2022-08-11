@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Pacientes;
+using System;
 using System.Collections;
 using System.Windows.Forms;
 
@@ -30,11 +31,9 @@ namespace Clinica
                 Doenca = doencaValor.Text
             };
 
-            ArrayList pacientes = new ArrayList();
-            pacientes.Add(paciente);
+            PacienteController controller = new PacienteController();
+            controller.Salvar(paciente);
 
-            PacientesView listagem = new PacientesView(pacientes);
-            listagem.Show();
             Close();
         }
     }

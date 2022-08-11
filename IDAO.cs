@@ -13,6 +13,6 @@ namespace Clinica
         Object Create(object objeto);
         Object Read (object chave);
         Object Update(object objeto);
-        Object Delete (object objeto);
+        Object Delete (object chave);
     }
 }

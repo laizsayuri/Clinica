@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Pacientes;
+using System;
 using System.Collections;
 using System.Windows.Forms;
 
@@ -15,7 +16,10 @@ namespace Clinica
         public PacientesView(ArrayList pacientes)
         {
             InitializeComponent();
-            int x = 0;
+
+            listagem.DataSource = pacientes;
+
+            /*int x = 0;
 
             foreach (Paciente p in pacientes)
             {
@@ -27,7 +31,7 @@ namespace Clinica
                 this.listagem.Rows[x].Cells[4].Value = p.Cidade;
                 this.listagem.Rows[x].Cells[5].Value = p.Doenca;
                 x++;
-            }
+            }*/
         }
 
         // filtrar
@@ -47,6 +51,58 @@ namespace Clinica
         {
             PacientesCriarView pacienteCriar = new PacientesCriarView();
             pacienteCriar.Show();
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int rowindex = listagem.CurrentCell.RowIndex;
+
+            string codp = listagem.Rows[rowindex].Cells[0].Value.ToString();
+            string nome = listagem.Rows[rowindex].Cells[1].Value.ToString();
+            string idade = listagem.Rows[rowindex].Cells[2].Value.ToString();
+            string cpf = listagem.Rows[rowindex].Cells[3].Value.ToString();
+            string cidade = listagem.Rows[rowindex].Cells[4].Value.ToString();
+            string doenca = listagem.Rows[rowindex].Cells[5].Value.ToString();
+
+            Paciente paciente = new Paciente();
+
+            paciente.Codp = int.Parse(codp);
+            paciente.Nome = nome;
+            paciente.Idade = int.Parse(idade);
+            paciente.Cpf = cpf;
+            paciente.Cidade = cidade;
+            paciente.Doenca = doenca;
+
+            PacienteController controller = new PacienteController();
+            controller.Alterar(paciente);
+            Close();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int rowindex = listagem.CurrentCell.RowIndex;
+
+            string codp = listagem.Rows[rowindex].Cells[0].Value.ToString();
+            string nome = listagem.Rows[rowindex].Cells[1].Value.ToString();
+            string idade = listagem.Rows[rowindex].Cells[2].Value.ToString();
+            string cpf = listagem.Rows[rowindex].Cells[3].Value.ToString();
+            string cidade = listagem.Rows[rowindex].Cells[4].Value.ToString();
+            string doenca = listagem.Rows[rowindex].Cells[5].Value.ToString();
+
+            Paciente paciente = new Paciente();
+
+            paciente.Codp = int.Parse(codp);
+            paciente.Nome = nome;
+            paciente.Idade = int.Parse(idade);
+            paciente.Cpf = cpf;
+            paciente.Cidade = cidade;
+            paciente.Doenca = doenca;
+
+            PacienteController controller = new PacienteController();
+            controller.Deletar(paciente);
+            
             Close();
         }
     }
