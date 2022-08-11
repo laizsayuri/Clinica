@@ -19,8 +19,8 @@ namespace Clinica.Medicos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            MedicosView medico = new MedicosView();
-            medico.Show();
+            MedicoController medicoController = new MedicoController();
+            medicoController.Listar();
             Close();
         }
 
@@ -28,19 +28,17 @@ namespace Clinica.Medicos
         {
             Medico medico = new Medico
             {
-                Codm = int.Parse(codigoValor.Text),
                 Nome = nomeValor.Text,
                 Idade = int.Parse(idadeValor.Text),
                 Especialidade = especialidadeValor.Text,
                 Cidade = cidadeValor.Text,
                 Cpf = cpfValor.Text,
-                Nroa = nroaValor.Text,
+                Nroa = string.IsNullOrEmpty(nroaValor.Text) ? 0 : int.Parse(nroaValor.Text),
             };
 
-            MedicosEditarView medicoEditar = new MedicosEditarView(medico);
-
-            medicoEditar.Show();
-            Close();
+            MedicoController controller = new MedicoController();
+            controller.Criar(medico);
+            Hide();
         }
     }
 }

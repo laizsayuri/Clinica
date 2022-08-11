@@ -1,4 +1,6 @@
-﻿namespace Clinica.Medicos
+﻿using System;
+
+namespace Clinica.Medicos
 {
     partial class MedicosEditarView
     {
@@ -175,6 +177,7 @@
             // 
             // codigoValor
             // 
+            this.codigoValor.Enabled = false;
             this.codigoValor.Location = new System.Drawing.Point(174, 104);
             this.codigoValor.Name = "codigoValor";
             this.codigoValor.Size = new System.Drawing.Size(223, 20);
@@ -219,6 +222,7 @@
 
         }
 
+        
         #endregion
 
         private System.Windows.Forms.Button button5;

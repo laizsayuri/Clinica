@@ -190,6 +190,8 @@
       <DependentUpon>AmbulatoriosView.cs</DependentUpon>
     </Compile>
     <Compile Include="Medicos\Medico.cs" />
+    <Compile Include="Medicos\MedicoController.cs" />
+    <Compile Include="Medicos\MedicoDAO.cs" />
     <Compile Include="Medicos\MedicosCriarView.cs">
       <SubType>Form</SubType>
     </Compile>

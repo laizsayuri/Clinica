@@ -1,5 +1,6 @@
 ﻿using Clinica.Consultas;
 using Clinica.Funcionarios;
+using Clinica.Medicos;
 using Clinica.Pacientes;
 using System;
 using System.Windows.Forms;
@@ -30,8 +31,8 @@ namespace Clinica
 
         private void medicoBtn_Click(object sender, EventArgs e)
         {
-            MedicosView tela = new MedicosView();
-            tela.Show();
+            MedicoController medicoController = new MedicoController();
+            medicoController.Listar();
             Hide();
         }
 

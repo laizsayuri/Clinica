@@ -23,7 +23,7 @@ namespace Clinica.Medicos
             especialidadeValor.Text = medico.Especialidade;
             cpfValor.Text = medico.Cpf;
             cidadeValor.Text = medico.Cidade;
-            nroaValor.Text = medico.Nroa;
+            nroaValor.Text = medico.Nroa.ToString();
 
         }
 
@@ -37,21 +37,19 @@ namespace Clinica.Medicos
                 Especialidade = especialidadeValor.Text,
                 Cidade = cidadeValor.Text,
                 Cpf = cpfValor.Text,
-                Nroa = nroaValor.Text,
+                Nroa = int.Parse(nroaValor.Text),
             };
 
-            ArrayList medicos = new ArrayList();
-            medicos.Add(medico);
+            MedicoController controller = new MedicoController();
+            controller.Salvar(medico);
 
-            MedicosView listagem = new MedicosView(medicos);
-            listagem.Show();
             Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            MedicosView paciente = new MedicosView();
-            paciente.Show();
+            MedicoController medicoController = new MedicoController();
+            medicoController.Listar();
             Close();
         }
     }

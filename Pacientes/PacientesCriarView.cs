@@ -13,8 +13,8 @@ namespace Clinica
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PacientesView paciente = new PacientesView();
-            paciente.Show();
+            PacienteController pacientecontroller = new PacienteController();
+            pacientecontroller.Listar();
             Close();
         }
 

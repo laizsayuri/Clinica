@@ -8,7 +8,7 @@
         public string Especialidade { get; set; }
         public string Cpf { get; set; }
         public string Cidade { get; set; }
-        public string Nroa { get; set; }
+        public int Nroa { get; set; }
 
         public override string ToString()
         {

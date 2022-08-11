@@ -67,7 +67,6 @@
             // 
             this.codm.HeaderText = "Codigo";
             this.codm.Name = "codm";
-            this.codm.Visible = false;
             // 
             // Nome
             // 
@@ -132,7 +131,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(398, 364);
+            this.button4.Location = new System.Drawing.Point(458, 338);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -142,21 +141,23 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(200, 364);
+            this.button3.Location = new System.Drawing.Point(93, 338);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 13;
             this.button3.Text = "Deletar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(33, 364);
+            this.button2.Location = new System.Drawing.Point(12, 338);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ambulatoriosBtn
             // 
@@ -172,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 399);
+            this.ClientSize = new System.Drawing.Size(545, 369);
             this.Controls.Add(this.ambulatoriosBtn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -190,13 +191,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView listagem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn especialidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroa;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
@@ -204,5 +198,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button ambulatoriosBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroa;
     }
 }
