@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.listagem = new System.Windows.Forms.DataGridView();
-            this.codp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.filtroValor = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,6 +36,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.codp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,39 +57,8 @@
             this.doenca});
             this.listagem.Location = new System.Drawing.Point(12, 56);
             this.listagem.Name = "listagem";
-            this.listagem.Size = new System.Drawing.Size(448, 163);
+            this.listagem.Size = new System.Drawing.Size(623, 163);
             this.listagem.TabIndex = 0;
-            // 
-            // codp
-            // 
-            this.codp.HeaderText = "Codigo";
-            this.codp.Name = "codp";
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            // 
-            // idade
-            // 
-            this.idade.HeaderText = "Idade";
-            this.idade.Name = "idade";
-            // 
-            // cidade
-            // 
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            // 
-            // cpf
-            // 
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            // 
-            // doenca
-            // 
-            this.doenca.HeaderText = "Doença";
-            this.doenca.Name = "doenca";
-            this.doenca.Visible = false;
             // 
             // button1
             // 
@@ -159,11 +128,41 @@
             this.listBox1.Size = new System.Drawing.Size(120, 17);
             this.listBox1.TabIndex = 8;
             // 
+            // codp
+            // 
+            this.codp.HeaderText = "Codigo";
+            this.codp.Name = "codp";
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            // 
+            // idade
+            // 
+            this.idade.HeaderText = "Idade";
+            this.idade.Name = "idade";
+            // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // cpf
+            // 
+            this.cpf.HeaderText = "CPF";
+            this.cpf.Name = "cpf";
+            // 
+            // doenca
+            // 
+            this.doenca.HeaderText = "Doença";
+            this.doenca.Name = "doenca";
+            // 
             // PacientesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 271);
+            this.ClientSize = new System.Drawing.Size(647, 278);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

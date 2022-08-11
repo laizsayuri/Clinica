@@ -17,9 +17,8 @@ namespace Clinica
         {
             InitializeComponent();
 
-            listagem.DataSource = pacientes;
-
-            /*int x = 0;
+            
+            int x = 0;
 
             foreach (Paciente p in pacientes)
             {
@@ -31,7 +30,7 @@ namespace Clinica
                 this.listagem.Rows[x].Cells[4].Value = p.Cidade;
                 this.listagem.Rows[x].Cells[5].Value = p.Doenca;
                 x++;
-            }*/
+            }
         }
 
         // filtrar
