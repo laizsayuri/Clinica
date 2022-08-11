@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listagem = new System.Windows.Forms.DataGridView();
             this.codm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,13 +42,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ambulatoriosBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.listagem)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // listagem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listagem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listagem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codm,
             this.Nome,
             this.idade,
@@ -56,11 +57,11 @@
             this.CPF,
             this.cidade,
             this.nroa});
-            this.dataGridView1.Location = new System.Drawing.Point(2, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 251);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.listagem.Location = new System.Drawing.Point(2, 56);
+            this.listagem.Name = "listagem";
+            this.listagem.Size = new System.Drawing.Size(545, 251);
+            this.listagem.TabIndex = 4;
+            this.listagem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // codm
             // 
@@ -118,10 +119,11 @@
             this.button5.TabIndex = 10;
             this.button5.Text = "Voltar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(265, 27);
+            this.button1.Location = new System.Drawing.Point(173, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -136,6 +138,7 @@
             this.button4.TabIndex = 14;
             this.button4.Text = "Novo";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -155,27 +158,38 @@
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Medicos
+            // ambulatoriosBtn
+            // 
+            this.ambulatoriosBtn.Location = new System.Drawing.Point(438, 26);
+            this.ambulatoriosBtn.Name = "ambulatoriosBtn";
+            this.ambulatoriosBtn.Size = new System.Drawing.Size(95, 23);
+            this.ambulatoriosBtn.TabIndex = 15;
+            this.ambulatoriosBtn.Text = "Ver Ambulatórios";
+            this.ambulatoriosBtn.UseVisualStyleBackColor = true;
+            this.ambulatoriosBtn.Click += new System.EventHandler(this.ambulatoriosBtn_Click);
+            // 
+            // MedicosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 399);
+            this.Controls.Add(this.ambulatoriosBtn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Medicos";
+            this.Controls.Add(this.listagem);
+            this.Name = "MedicosView";
             this.Text = "Medicos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listagem)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn codm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn idade;
@@ -189,5 +203,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ambulatoriosBtn;
     }
 }

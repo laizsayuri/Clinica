@@ -53,6 +53,7 @@
             this.consultaBtn.TabIndex = 1;
             this.consultaBtn.Text = "Consultas";
             this.consultaBtn.UseVisualStyleBackColor = true;
+            this.consultaBtn.Click += new System.EventHandler(this.consultaBtn_Click);
             // 
             // funcionarioBtn
             // 
@@ -72,6 +73,7 @@
             this.medicoBtn.TabIndex = 2;
             this.medicoBtn.Text = "Médicos";
             this.medicoBtn.UseVisualStyleBackColor = true;
+            this.medicoBtn.Click += new System.EventHandler(this.medicoBtn_Click);
             // 
             // inicioLbl
             // 

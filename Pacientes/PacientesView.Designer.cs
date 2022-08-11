@@ -57,7 +57,7 @@
             this.doenca});
             this.listagem.Location = new System.Drawing.Point(12, 56);
             this.listagem.Name = "listagem";
-            this.listagem.Size = new System.Drawing.Size(459, 163);
+            this.listagem.Size = new System.Drawing.Size(448, 163);
             this.listagem.TabIndex = 0;
             // 
             // codp
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 271);
+            this.ClientSize = new System.Drawing.Size(477, 271);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

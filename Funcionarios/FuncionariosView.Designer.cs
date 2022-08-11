@@ -32,7 +32,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.filtroValor = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listagem = new System.Windows.Forms.DataGridView();
@@ -43,6 +42,8 @@
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editarBtn = new System.Windows.Forms.Button();
+            this.dependentesBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,15 +87,6 @@
             this.button3.Text = "Deletar";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(16, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // filtroValor
             // 
             this.filtroValor.Location = new System.Drawing.Point(142, 29);
@@ -125,7 +117,7 @@
             this.Cargo});
             this.listagem.Location = new System.Drawing.Point(15, 57);
             this.listagem.Name = "listagem";
-            this.listagem.Size = new System.Drawing.Size(543, 163);
+            this.listagem.Size = new System.Drawing.Size(642, 163);
             this.listagem.TabIndex = 9;
             // 
             // codf
@@ -164,16 +156,37 @@
             this.Cargo.HeaderText = "Cargo";
             this.Cargo.Name = "Cargo";
             // 
+            // editarBtn
+            // 
+            this.editarBtn.Location = new System.Drawing.Point(16, 237);
+            this.editarBtn.Name = "editarBtn";
+            this.editarBtn.Size = new System.Drawing.Size(75, 23);
+            this.editarBtn.TabIndex = 18;
+            this.editarBtn.Text = "Editar";
+            this.editarBtn.UseVisualStyleBackColor = true;
+            this.editarBtn.Click += new System.EventHandler(this.editarBtn_Click);
+            // 
+            // dependentesBtn
+            // 
+            this.dependentesBtn.Location = new System.Drawing.Point(564, 24);
+            this.dependentesBtn.Name = "dependentesBtn";
+            this.dependentesBtn.Size = new System.Drawing.Size(80, 23);
+            this.dependentesBtn.TabIndex = 19;
+            this.dependentesBtn.Text = "Dependentes";
+            this.dependentesBtn.UseVisualStyleBackColor = true;
+            this.dependentesBtn.Click += new System.EventHandler(this.dependentesBtn_Click);
+            // 
             // FuncionariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 271);
+            this.ClientSize = new System.Drawing.Size(682, 271);
+            this.Controls.Add(this.dependentesBtn);
+            this.Controls.Add(this.editarBtn);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.filtroValor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listagem);
@@ -191,7 +204,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox filtroValor;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView listagem;
@@ -202,5 +214,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
         private System.Windows.Forms.DataGridViewTextBoxColumn salario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.Button editarBtn;
+        private System.Windows.Forms.Button dependentesBtn;
     }
 }

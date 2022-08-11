@@ -41,5 +41,17 @@ namespace Clinica.Funcionarios
             funcionarioCriar.Show();
             Close();
         }
+
+        private void editarBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dependentesBtn_Click(object sender, EventArgs e)
+        {
+            DependentesView tela = new DependentesView();
+            tela.Show();
+            Hide();
+        }
     }
 }

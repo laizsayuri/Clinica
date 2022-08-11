@@ -15,11 +15,18 @@ namespace Clinica
         public PacientesView(ArrayList pacientes)
         {
             InitializeComponent();
-            listagem.DataSource = pacientes;
+            int x = 0;
 
             foreach (Paciente p in pacientes)
             {
-                MessageBox.Show(p.ToString());               
+                this.listagem.Rows.Add();
+                this.listagem.Rows[x].Cells[0].Value = p.Codp;
+                this.listagem.Rows[x].Cells[1].Value = p.Nome;
+                this.listagem.Rows[x].Cells[2].Value = p.Idade;
+                this.listagem.Rows[x].Cells[3].Value = p.Cpf;
+                this.listagem.Rows[x].Cells[4].Value = p.Cidade;
+                this.listagem.Rows[x].Cells[5].Value = p.Doenca;
+                x++;
             }
         }
 
