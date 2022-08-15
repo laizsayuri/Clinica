@@ -55,8 +55,6 @@ namespace Clinica.Medicos
             medicoDAO.Delete(medico);
 
             new MedicosView(medicoDAO.All()).Show();
-        }
-
-        
+        }        
     }
 }

@@ -171,6 +171,8 @@
       <DependentUpon>InicioView.cs</DependentUpon>
     </Compile>
     <Compile Include="Medicos\Ambulatorios\Ambulatorio.cs" />
+    <Compile Include="Medicos\Ambulatorios\AmbulatorioController.cs" />
+    <Compile Include="Medicos\Ambulatorios\AmbulatorioDAO.cs" />
     <Compile Include="Medicos\Ambulatorios\AmbulatoriosCriarView.cs">
       <SubType>Form</SubType>
     </Compile>

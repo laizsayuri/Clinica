@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Medicos.Ambulatorios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,8 @@ namespace Clinica.Medicos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AmbulatoriosView ambulatorio = new AmbulatoriosView();
-            ambulatorio.Show();
+            AmbulatorioController ambulatorioController = new AmbulatorioController();
+            ambulatorioController.Listar();
             Close();
         }
 
@@ -30,13 +31,13 @@ namespace Clinica.Medicos
             {
                 Nroa = int.Parse(nroaValor.Text),
                 Andar = andarValor.Text,
-                Capacidade = int.Parse(capacidadeValor.Text),
+                Capacidade = int.Parse(capacidadeValor.Text)
             };
 
-            AmbulatoriosEditarView ambulatorioEditar = new AmbulatoriosEditarView(ambulatorio);
+            AmbulatorioController controller = new AmbulatorioController();
 
-            ambulatorioEditar.Show();
-            Close();
+            controller.Criar(ambulatorio);
+            Hide();
         }
     }
 }

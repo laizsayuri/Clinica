@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Medicos.Ambulatorios;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,18 +33,15 @@ namespace Clinica.Medicos
                 Capacidade = int.Parse(capacidadeValor.Text),                
             };
 
-            ArrayList ambulatorios = new ArrayList();
-            ambulatorios.Add(ambulatorio);
-
-            AmbulatoriosView listagem = new AmbulatoriosView(ambulatorios);
-            listagem.Show();
+            AmbulatorioController controller = new AmbulatorioController();
+            controller.Salvar(ambulatorio);
             Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AmbulatoriosView ambulatorio = new AmbulatoriosView();
-            ambulatorio.Show();
+            AmbulatorioController ambulatorioController = new AmbulatorioController();
+            ambulatorioController.Listar();
             Close();
         }
     }

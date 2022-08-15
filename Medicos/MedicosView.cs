@@ -1,4 +1,5 @@
 ﻿using Clinica.Medicos;
+using Clinica.Medicos.Ambulatorios;
 using System.Collections;
 using System.Windows.Forms;
 
@@ -51,8 +52,8 @@ namespace Clinica
 
         private void ambulatoriosBtn_Click(object sender, System.EventArgs e)
         {
-            AmbulatoriosView tela = new AmbulatoriosView();
-            tela.Show();
+            AmbulatorioController ambulatorioController = new AmbulatorioController();
+            ambulatorioController.Listar();
             Hide();
         }
 
