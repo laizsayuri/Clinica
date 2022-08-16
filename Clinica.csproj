@@ -107,6 +107,8 @@
   <ItemGroup>
     <Compile Include="BancoDeDados.cs" />
     <Compile Include="Consultas\Consulta.cs" />
+    <Compile Include="Consultas\ConsultaController.cs" />
+    <Compile Include="Consultas\ConsultaDAO.cs" />
     <Compile Include="Consultas\ConsultasCriarView.cs">
       <SubType>Form</SubType>
     </Compile>

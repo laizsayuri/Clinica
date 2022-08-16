@@ -19,8 +19,8 @@ namespace Clinica.Consultas
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ConsultasView consulta = new ConsultasView();
-            consulta.Show();
+            ConsultaController consultaController = new ConsultaController();
+            consultaController.Listar();
             Close();
         }
 
@@ -29,15 +29,14 @@ namespace Clinica.Consultas
             Consulta consulta = new Consulta
             {
                 Codm = int.Parse(codigoMValor.Text),
-                Codp = codPValor.Text,
-                Data = dataValor.Text,
-                Hora = horaValor.Text,
+                Codp = int.Parse(codPValor.Text),
+                DataHora = dataValor.Value,                
             };
 
-            ConsultasEditarView consultaEditar = new ConsultasEditarView(consulta);
+            ConsultaController controller = new ConsultaController();
 
-            consultaEditar.Show();
-            Close();
+            controller.Criar(consulta);
+            Hide();            
         }
     }
 }

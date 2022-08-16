@@ -13,14 +13,16 @@ namespace Clinica.Consultas
 {
     public partial class ConsultasEditarView : Form
     {
+        private Consulta consultaBase;
+
         public ConsultasEditarView(Consulta consulta)
         {
             InitializeComponent();
+            consultaBase = consulta;
 
             codigoMValor.Text = consulta.Codm.ToString();
             codPValor.Text = consulta.Codp.ToString();
-            dataValor.Text = consulta.Data.ToString();
-            horaValor.Text = consulta.Hora;            
+            dataValor.Value = consulta.DataHora;                
         }
 
         private void salvar_Click(object sender, EventArgs e)
@@ -28,16 +30,19 @@ namespace Clinica.Consultas
             Consulta consulta = new Consulta
             {
                 Codm = int.Parse(codigoMValor.Text),
-                Codp = codPValor.Text,
-                Data = dataValor.Text,
-                Hora = horaValor.Text,                
+                Codp = int.Parse(codPValor.Text),
+                DataHora = dataValor.Value,                 
             };
 
-            ArrayList consultas = new ArrayList();
-            consultas.Add(consulta);
+            ConsultaController controller = new ConsultaController();
+            controller.Salvar(consultaBase, consulta);
+            Close();
+        }
 
-            ConsultasView listagem = new ConsultasView(consultas);
-            listagem.Show();
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ConsultaController consultaController = new ConsultaController();
+            consultaController.Listar();
             Close();
         }
     }

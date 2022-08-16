@@ -38,8 +38,8 @@ namespace Clinica
 
         private void consultaBtn_Click(object sender, EventArgs e)
         {
-            ConsultasView tela = new ConsultasView();
-            tela.Show();
+            ConsultaController consultaController = new ConsultaController();
+            consultaController.Listar();
             Hide();
         }
     }

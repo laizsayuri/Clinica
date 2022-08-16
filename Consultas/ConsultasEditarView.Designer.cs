@@ -31,14 +31,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.salvar = new System.Windows.Forms.Button();
             this.titulo_label = new System.Windows.Forms.Label();
-            this.horaValor = new System.Windows.Forms.TextBox();
-            this.hora_label = new System.Windows.Forms.Label();
-            this.dataValor = new System.Windows.Forms.TextBox();
             this.data_label = new System.Windows.Forms.Label();
             this.codPValor = new System.Windows.Forms.TextBox();
             this.codigoP_label = new System.Windows.Forms.Label();
             this.codigoMValor = new System.Windows.Forms.TextBox();
             this.codigoM_label = new System.Windows.Forms.Label();
+            this.dataValor = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button5
@@ -49,6 +47,7 @@
             this.button5.TabIndex = 40;
             this.button5.Text = "Voltar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // salvar
             // 
@@ -70,37 +69,14 @@
             this.titulo_label.TabIndex = 38;
             this.titulo_label.Text = "Editar consulta:";
             // 
-            // horaValor
-            // 
-            this.horaValor.Location = new System.Drawing.Point(167, 204);
-            this.horaValor.Name = "horaValor";
-            this.horaValor.Size = new System.Drawing.Size(223, 20);
-            this.horaValor.TabIndex = 37;
-            // 
-            // hora_label
-            // 
-            this.hora_label.AutoSize = true;
-            this.hora_label.Location = new System.Drawing.Point(71, 211);
-            this.hora_label.Name = "hora_label";
-            this.hora_label.Size = new System.Drawing.Size(33, 13);
-            this.hora_label.TabIndex = 36;
-            this.hora_label.Text = "Hora:";
-            // 
-            // dataValor
-            // 
-            this.dataValor.Location = new System.Drawing.Point(167, 162);
-            this.dataValor.Name = "dataValor";
-            this.dataValor.Size = new System.Drawing.Size(223, 20);
-            this.dataValor.TabIndex = 35;
-            // 
             // data_label
             // 
             this.data_label.AutoSize = true;
             this.data_label.Location = new System.Drawing.Point(71, 169);
             this.data_label.Name = "data_label";
-            this.data_label.Size = new System.Drawing.Size(33, 13);
+            this.data_label.Size = new System.Drawing.Size(68, 13);
             this.data_label.TabIndex = 34;
-            this.data_label.Text = "Data:";
+            this.data_label.Text = "Data e Hora:";
             // 
             // codPValor
             // 
@@ -135,17 +111,24 @@
             this.codigoM_label.Text = "Codigo Medico:";
             this.codigoM_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // dataValor
+            // 
+            this.dataValor.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dataValor.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataValor.Location = new System.Drawing.Point(167, 162);
+            this.dataValor.Name = "dataValor";
+            this.dataValor.Size = new System.Drawing.Size(223, 20);
+            this.dataValor.TabIndex = 41;
+            // 
             // ConsultasEditarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 279);
+            this.Controls.Add(this.dataValor);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.salvar);
             this.Controls.Add(this.titulo_label);
-            this.Controls.Add(this.horaValor);
-            this.Controls.Add(this.hora_label);
-            this.Controls.Add(this.dataValor);
             this.Controls.Add(this.data_label);
             this.Controls.Add(this.codPValor);
             this.Controls.Add(this.codigoP_label);
@@ -163,13 +146,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button salvar;
         private System.Windows.Forms.Label titulo_label;
-        private System.Windows.Forms.TextBox horaValor;
-        private System.Windows.Forms.Label hora_label;
-        private System.Windows.Forms.TextBox dataValor;
         private System.Windows.Forms.Label data_label;
         private System.Windows.Forms.TextBox codPValor;
         private System.Windows.Forms.Label codigoP_label;
         private System.Windows.Forms.TextBox codigoMValor;
         private System.Windows.Forms.Label codigoM_label;
+        private System.Windows.Forms.DateTimePicker dataValor;
     }
 }
