@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Funcionarios.Dependentes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,8 @@ namespace Clinica.Funcionarios
 
         private void button5_Click(object sender, EventArgs e)
         {
-            DependentesView dependente = new DependentesView();
-            dependente.Show();
+            DependenteController dependenteController = new DependenteController();
+            dependenteController.Listar();
             Close();
         }
 
@@ -28,16 +29,14 @@ namespace Clinica.Funcionarios
         {
             Dependente dependente = new Dependente
             {
-                Codd = int.Parse(codigoDValor.Text),
                 Nome = nomeValor.Text,
-                DataNascimento = dataNascimentoValor.Text,
-                Codf = codigoFValor.Text,
+                DataNascimento = dataNascValor.Value,
+                Codf = int.Parse(codigoFValor.Text),
             };
 
-            DependentesEditarView dependenteEditar = new DependentesEditarView(dependente);
-
-            dependenteEditar.Show();
-            Close();
+            DependenteController controller = new DependenteController();
+            controller.Criar(dependente);
+            Hide();
         }
     }
 }

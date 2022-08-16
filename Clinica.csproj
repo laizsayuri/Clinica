@@ -126,6 +126,8 @@
       <DependentUpon>ConsultasView.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionarios\Dependentes\Dependente.cs" />
+    <Compile Include="Funcionarios\Dependentes\DependenteController.cs" />
+    <Compile Include="Funcionarios\Dependentes\DependenteDAO.cs" />
     <Compile Include="Funcionarios\Dependentes\DependentesCriarView.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -10,8 +10,8 @@ namespace Clinica.Funcionarios
     {
         public int Codd { get; set; }
         public string Nome { get; set; }
-        public string DataNascimento { get; set; }
-        public string Codf { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public int Codf { get; set; }
         
         public override string ToString()
         {

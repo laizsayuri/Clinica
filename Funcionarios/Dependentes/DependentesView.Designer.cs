@@ -51,6 +51,7 @@
             this.editarBtn.TabIndex = 26;
             this.editarBtn.Text = "Editar";
             this.editarBtn.UseVisualStyleBackColor = true;
+            this.editarBtn.Click += new System.EventHandler(this.editarBtn_Click);
             // 
             // listBox1
             // 
@@ -91,6 +92,7 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "Deletar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // filtroValor
             // 
@@ -118,14 +120,13 @@
             this.codf});
             this.listagem.Location = new System.Drawing.Point(12, 59);
             this.listagem.Name = "listagem";
-            this.listagem.Size = new System.Drawing.Size(344, 163);
+            this.listagem.Size = new System.Drawing.Size(444, 163);
             this.listagem.TabIndex = 19;
             // 
             // codd
             // 
             this.codd.HeaderText = "Codigo Dependente:";
             this.codd.Name = "codd";
-            this.codd.Visible = false;
             // 
             // nome
             // 
@@ -146,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 295);
+            this.ClientSize = new System.Drawing.Size(467, 295);
             this.Controls.Add(this.editarBtn);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);

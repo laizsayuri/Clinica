@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Funcionarios.Dependentes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,8 @@ namespace Clinica.Funcionarios
 
             codigoDValor.Text = dependente.Codd.ToString();
             nomeValor.Text = dependente.Nome;
-            dataNascimentoValor.Text = dependente.DataNascimento;
-            codigoFValor.Text = dependente.Codf;
+            dataNascValor.Value = dependente.DataNascimento;
+            codigoFValor.Text = dependente.Codf.ToString();
         }
 
         private void salvar_Click(object sender, EventArgs e)
@@ -29,15 +30,19 @@ namespace Clinica.Funcionarios
             {
                 Codd = int.Parse(codigoDValor.Text),
                 Nome = nomeValor.Text,
-                DataNascimento = dataNascimentoValor.Text,
-                Codf = codigoFValor.Text,
+                DataNascimento = dataNascValor.Value,
+                Codf = int.Parse(codigoFValor.Text),
             };
+                        
+            DependenteController controller = new DependenteController();
+            controller.Salvar(dependente);
+            Close();
+        }
 
-            ArrayList dependentes = new ArrayList();
-            dependentes.Add(dependente);
-
-            DependentesView listagem = new DependentesView(dependentes);
-            listagem.Show();
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DependenteController dependenteController = new DependenteController();
+            dependenteController.Listar();
             Close();
         }
     }

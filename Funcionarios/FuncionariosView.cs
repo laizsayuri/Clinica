@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clinica.Funcionarios.Dependentes;
+using Clinica.Funcionarios;
+using System;
 using System.Collections;
 using System.Windows.Forms;
 
@@ -79,8 +81,8 @@ namespace Clinica.Funcionarios
 
         private void dependentesBtn_Click(object sender, EventArgs e)
         {
-            DependentesView tela = new DependentesView();
-            tela.Show();
+            DependenteController dependenteController = new DependenteController();
+            dependenteController.Listar();
             Hide();
         }
 

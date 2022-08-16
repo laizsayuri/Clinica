@@ -33,12 +33,12 @@
             this.titulo_label = new System.Windows.Forms.Label();
             this.codigoFValor = new System.Windows.Forms.TextBox();
             this.codigoF_label = new System.Windows.Forms.Label();
-            this.dataNascimentoValor = new System.Windows.Forms.TextBox();
             this.dataNasc_label = new System.Windows.Forms.Label();
             this.nomeValor = new System.Windows.Forms.TextBox();
             this.nome_label = new System.Windows.Forms.Label();
             this.codigoDValor = new System.Windows.Forms.TextBox();
             this.codigoD_label = new System.Windows.Forms.Label();
+            this.dataNascValor = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button5
@@ -49,6 +49,7 @@
             this.button5.TabIndex = 60;
             this.button5.Text = "Voltar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // salvar
             // 
@@ -87,13 +88,6 @@
             this.codigoF_label.TabIndex = 56;
             this.codigoF_label.Text = "Codigo Funcionario:";
             // 
-            // dataNascimentoValor
-            // 
-            this.dataNascimentoValor.Location = new System.Drawing.Point(167, 212);
-            this.dataNascimentoValor.Name = "dataNascimentoValor";
-            this.dataNascimentoValor.Size = new System.Drawing.Size(223, 20);
-            this.dataNascimentoValor.TabIndex = 55;
-            // 
             // dataNasc_label
             // 
             this.dataNasc_label.AutoSize = true;
@@ -121,6 +115,7 @@
             // 
             // codigoDValor
             // 
+            this.codigoDValor.Enabled = false;
             this.codigoDValor.Location = new System.Drawing.Point(167, 123);
             this.codigoDValor.Name = "codigoDValor";
             this.codigoDValor.Size = new System.Drawing.Size(223, 20);
@@ -136,17 +131,24 @@
             this.codigoD_label.Text = "Codigo Dependente:";
             this.codigoD_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // dataNascValor
+            // 
+            this.dataNascValor.Location = new System.Drawing.Point(167, 209);
+            this.dataNascValor.Name = "dataNascValor";
+            this.dataNascValor.Size = new System.Drawing.Size(223, 20);
+            this.dataNascValor.TabIndex = 61;
+            // 
             // DependentesEditarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 347);
+            this.Controls.Add(this.dataNascValor);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.salvar);
             this.Controls.Add(this.titulo_label);
             this.Controls.Add(this.codigoFValor);
             this.Controls.Add(this.codigoF_label);
-            this.Controls.Add(this.dataNascimentoValor);
             this.Controls.Add(this.dataNasc_label);
             this.Controls.Add(this.nomeValor);
             this.Controls.Add(this.nome_label);
@@ -166,11 +168,11 @@
         private System.Windows.Forms.Label titulo_label;
         private System.Windows.Forms.TextBox codigoFValor;
         private System.Windows.Forms.Label codigoF_label;
-        private System.Windows.Forms.TextBox dataNascimentoValor;
         private System.Windows.Forms.Label dataNasc_label;
         private System.Windows.Forms.TextBox nomeValor;
         private System.Windows.Forms.Label nome_label;
         private System.Windows.Forms.TextBox codigoDValor;
         private System.Windows.Forms.Label codigoD_label;
+        private System.Windows.Forms.DateTimePicker dataNascValor;
     }
 }
