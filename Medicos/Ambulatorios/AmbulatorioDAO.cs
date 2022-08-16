@@ -88,7 +88,7 @@ namespace Clinica.Medicos.Ambulatorios
                 cmd.CommandText = "update ambulatorios set andar = @andar, capacidade = @capacidade where nroa = @nroa ";
 
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@nome", ambulatorio.Andar);
+                cmd.Parameters.AddWithValue("@andar", ambulatorio.Andar);
                 cmd.Parameters.AddWithValue("@capacidade", ambulatorio.Capacidade);
                 cmd.Parameters.AddWithValue("@nroa", ambulatorio.Nroa);
 

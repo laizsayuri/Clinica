@@ -101,7 +101,34 @@ namespace Clinica.Pacientes
 
         public object Read(object chave)
         {
-            throw new NotImplementedException();
+            Paciente paciente = (Paciente)chave;
+            Paciente doBanco = new Paciente();
+
+            BancoDeDados bd = new BancoDeDados();
+            string sql = "SELECT * FROM pacientes where codp = @codp";
+            MySqlCommand cmd = new MySqlCommand(sql, bd.conectar());
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@codp", paciente.Codp);
+
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    doBanco.Codp = int.Parse(rdr[0].ToString());
+                    doBanco.Nome = rdr[1].ToString();
+                    doBanco.Idade = int.Parse(rdr[2].ToString());
+                    doBanco.Cpf = rdr[3].ToString();
+                    doBanco.Cidade = rdr[4].ToString();
+                    doBanco.Doenca = rdr[5].ToString();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return doBanco;
         }
 
         public object Update(object objeto)

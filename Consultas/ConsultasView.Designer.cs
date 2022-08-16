@@ -35,8 +35,10 @@
             this.filtroValor = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listagem = new System.Windows.Forms.DataGridView();
-            this.codm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomePaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listagem)).BeginInit();
@@ -102,8 +104,10 @@
             // 
             this.listagem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listagem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codm,
-            this.codp,
+            this.nomeMedico,
+            this.codM,
+            this.nomePaciente,
+            this.codP,
             this.data,
             this.hora});
             this.listagem.Location = new System.Drawing.Point(15, 59);
@@ -111,15 +115,27 @@
             this.listagem.Size = new System.Drawing.Size(447, 163);
             this.listagem.TabIndex = 9;
             // 
-            // codm
+            // nomeMedico
             // 
-            this.codm.HeaderText = "Codigo Médico";
-            this.codm.Name = "codm";
+            this.nomeMedico.HeaderText = "Médico";
+            this.nomeMedico.Name = "nomeMedico";
             // 
-            // codp
+            // codM
             // 
-            this.codp.HeaderText = "Codigo Paciente";
-            this.codp.Name = "codp";
+            this.codM.HeaderText = "Código Médico";
+            this.codM.Name = "codM";
+            this.codM.Visible = false;
+            // 
+            // nomePaciente
+            // 
+            this.nomePaciente.HeaderText = "Paciente";
+            this.nomePaciente.Name = "nomePaciente";
+            // 
+            // codP
+            // 
+            this.codP.HeaderText = "Código Paciente";
+            this.codP.Name = "codP";
+            this.codP.Visible = false;
             // 
             // data
             // 
@@ -159,8 +175,10 @@
         private System.Windows.Forms.TextBox filtroValor;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView listagem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeMedico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomePaciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codP;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
     }

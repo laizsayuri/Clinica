@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clinica.Medicos;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,15 @@ namespace Clinica.Consultas
             InitializeComponent();
         }
 
+        public ConsultasCriarView(ArrayList medicos, ArrayList pacientes)
+        {
+            InitializeComponent();
+            foreach (Medico m in medicos)
+                this.medicos_combo.Items.Add(m.Codm + " - " + m.Nome);
+            foreach (Paciente p in pacientes)
+                this.pacientes_combo.Items.Add(p.Codp + " - " + p.Nome);
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             ConsultaController consultaController = new ConsultaController();
@@ -26,17 +37,23 @@ namespace Clinica.Consultas
 
         private void salvar_Click(object sender, EventArgs e)
         {
-            Consulta consulta = new Consulta
-            {
-                Codm = int.Parse(codigoMValor.Text),
-                Codp = int.Parse(codPValor.Text),
-                DataHora = dataValor.Value,                
-            };
-
             ConsultaController controller = new ConsultaController();
+            string medico = this.medicos_combo.SelectedItem.ToString();
+            string paciente = this.pacientes_combo.SelectedItem.ToString();
+            DateTime dataHora = this.dataHoraConsulta.Value;
 
+            Medico m = new Medico();
+            Paciente p = new Paciente();
+
+            m.Codm = int.Parse(medico.Split(' ')[0]);
+            p.Codp = int.Parse(paciente.Split(' ')[0]);
+
+            Consulta consulta = new Consulta();
+            consulta.Medico = m;
+            consulta.Paciente = p;
+            consulta.DataHora = dataHora;
             controller.Criar(consulta);
-            Hide();            
+            Close();
         }
     }
 }

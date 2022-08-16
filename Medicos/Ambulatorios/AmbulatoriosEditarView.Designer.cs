@@ -71,6 +71,7 @@
             // 
             // nroaValor
             // 
+            this.nroaValor.Enabled = false;
             this.nroaValor.Location = new System.Drawing.Point(138, 118);
             this.nroaValor.Name = "nroaValor";
             this.nroaValor.Size = new System.Drawing.Size(223, 20);

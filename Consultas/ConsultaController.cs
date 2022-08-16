@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clinica.Medicos;
+using Clinica.Pacientes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Clinica.Consultas
 {
-    public class ConsultaController
+    public class ConsultaController : IController
     {
         public void Listar()
         {
@@ -22,19 +24,49 @@ namespace Clinica.Consultas
             Consulta consulta = (Consulta)objeto;
             ConsultaDAO consultaDAO = new ConsultaDAO();
             consultaDAO.Create(consulta);
-            Alterar(consulta);
+
+            ArrayList lista = consultaDAO.All();
+
+            ConsultasView tela = new ConsultasView(lista);
+            tela.Show();
         }
 
         public void Alterar(object objeto)
         {
             Consulta consulta = (Consulta)objeto;
-            ConsultasEditarView edicao = new ConsultasEditarView(consulta);
+            PacienteDAO pacienteDAO = new PacienteDAO();
+            MedicoDAO medicoDAO = new MedicoDAO();
+            ArrayList pacientes, medicos;
+            medicos = medicoDAO.All();
+            pacientes = pacienteDAO.All();
+            ConsultasEditarView edicao = new ConsultasEditarView(consulta, medicos, pacientes);
             edicao.Show();
         }
 
-        public void Salvar(Consulta objetoAntigo, Consulta objetoNovo)
-        {           
+        public void preparaCriacao()
+        {
+            PacienteDAO pacienteDAO = new PacienteDAO();
+            MedicoDAO medicoDAO = new MedicoDAO();
+            ArrayList pacientes, medicos;
+            medicos = medicoDAO.All();
+            pacientes = pacienteDAO.All();
+            ConsultasCriarView tela = new ConsultasCriarView(medicos, pacientes);
+            tela.Show();
+        }
 
+
+        public void Deletar(Object objeto)
+        {
+            Consulta consulta = (Consulta)objeto;
+
+            ConsultaDAO consultaDAO = new ConsultaDAO();
+            consultaDAO.Delete(consulta);
+
+            new ConsultasView(consultaDAO.All()).Show();
+        }
+
+        public void Salvar(Consulta objetoAntigo, Consulta objetoNovo)
+        {
             ConsultaDAO consultaDAO = new ConsultaDAO();
 
             Consulta consulta = (Consulta)consultaDAO.Update(objetoAntigo, objetoNovo);
@@ -46,14 +78,9 @@ namespace Clinica.Consultas
             listagem.Show();
         }
 
-        public void Deletar(Object objeto)
+        public void Salvar(object objeto)
         {
-            Consulta consulta = (Consulta)objeto;
-
-            ConsultaDAO consultaDAO = new ConsultaDAO();
-            consultaDAO.Delete(consulta);
-
-            new ConsultasView(consultaDAO.All()).Show();
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Clinica.Medicos;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,13 +15,20 @@ namespace Clinica.Consultas
         {
             ArrayList lista = new ArrayList();
 
-            Consulta consulta;
+            string sql = "select m.*, p.*, c.data, c.hora from consultas c " +
+                "join pacientes p on p.codp = c.codp " +
+                "join medicos m on c.codm = m.codm; ";
 
             BancoDeDados bd = new BancoDeDados();
 
-            string sql = "SELECT * FROM consultas order by data, hora desc";
+            Consulta consulta;            
 
+            Paciente paciente = new Paciente();
+            Medico medico = new Medico();
             MySqlCommand cmd = new MySqlCommand(sql, bd.conectar());
+            //string data, hora;
+            int nroa = 0;
+            
 
             try
             {
@@ -28,9 +36,26 @@ namespace Clinica.Consultas
                 while (rdr.Read())
                 {
                     consulta = new Consulta();
-                    consulta.Codm = rdr[0] == DBNull.Value ? 0 : int.Parse(rdr[0].ToString());
-                    consulta.Codp = rdr[1] == DBNull.Value ? 0 : int.Parse(rdr[1].ToString());
-                    consulta.DataHora = DateTime.Parse(rdr[2].ToString().Split(' ')[0] + " " + rdr[3].ToString());                   
+                    medico = new Medico();
+                    paciente = new Paciente();
+
+                    medico.Codm = int.Parse(rdr[0].ToString());
+                    medico.Nome = rdr[1].ToString();
+                    medico.Idade = int.Parse(rdr[2].ToString());
+                    medico.Especialidade = rdr[3].ToString();
+                    medico.Cpf = rdr[4].ToString();
+                    medico.Cidade = rdr[5].ToString();
+                    int.TryParse(rdr[6].ToString(), out nroa);
+                    medico.Nroa = nroa;
+                    paciente.Codp = int.Parse(rdr[7].ToString());
+                    paciente.Nome = rdr[8].ToString();
+                    paciente.Idade = int.Parse(rdr[9].ToString());
+                    paciente.Cpf = rdr[10].ToString();
+                    paciente.Cidade = rdr[11].ToString();
+                    paciente.Doenca = rdr[12].ToString();
+                    consulta.DataHora = DateTime.Parse(rdr[13].ToString().Split(' ')[0] + " " + rdr[14].ToString());
+                    consulta.Medico = medico;
+                    consulta.Paciente = paciente;
                     lista.Add(consulta);
                 }
                 rdr.Close();
@@ -55,8 +80,8 @@ namespace Clinica.Consultas
                 cmd.CommandText = "INSERT INTO consultas (codm, codp, data, hora )" +
                     "VALUES (@codm, @codp, @data, @hora )";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@codm", consulta.Codm);
-                cmd.Parameters.AddWithValue("@codp", consulta.Codp);
+                cmd.Parameters.AddWithValue("@codm", consulta.Medico.Codm);
+                cmd.Parameters.AddWithValue("@codp", consulta.Paciente.Codp);
                 cmd.Parameters.AddWithValue("@data", consulta.DataBanco);
                 cmd.Parameters.AddWithValue("@hora", consulta.Hora); 
                 cmd.ExecuteNonQuery();
@@ -81,8 +106,8 @@ namespace Clinica.Consultas
                 cmd.Connection = conn;
                 cmd.CommandText = "delete from consultas where codm = @codm and codp = @codp and data = @data and hora = @hora ";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@codm", consulta.Codm);
-                cmd.Parameters.AddWithValue("@codp", consulta.Codp);
+                cmd.Parameters.AddWithValue("@codm", consulta.Medico.Codm);
+                cmd.Parameters.AddWithValue("@codp", consulta.Paciente.Codp);
                 cmd.Parameters.AddWithValue("@data", consulta.DataBanco);
                 cmd.Parameters.AddWithValue("@hora", consulta.Hora);
 

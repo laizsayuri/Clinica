@@ -169,6 +169,7 @@
       <DependentUpon>FuncionariosView.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionarios\Funcionario.cs" />
+    <Compile Include="IController.cs" />
     <Compile Include="IDAO.cs" />
     <Compile Include="InicioView.cs">
       <SubType>Form</SubType>

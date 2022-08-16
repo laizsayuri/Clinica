@@ -32,11 +32,11 @@
             this.salvar = new System.Windows.Forms.Button();
             this.titulo_label = new System.Windows.Forms.Label();
             this.data_label = new System.Windows.Forms.Label();
-            this.codPValor = new System.Windows.Forms.TextBox();
             this.codigoP_label = new System.Windows.Forms.Label();
-            this.codigoMValor = new System.Windows.Forms.TextBox();
             this.codigoM_label = new System.Windows.Forms.Label();
-            this.dataValor = new System.Windows.Forms.DateTimePicker();
+            this.dataHoraConsulta = new System.Windows.Forms.DateTimePicker();
+            this.medicos_combo = new System.Windows.Forms.ComboBox();
+            this.pacientes_combo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button5
@@ -78,13 +78,6 @@
             this.data_label.TabIndex = 19;
             this.data_label.Text = "Data e Hora:";
             // 
-            // codPValor
-            // 
-            this.codPValor.Location = new System.Drawing.Point(166, 119);
-            this.codPValor.Name = "codPValor";
-            this.codPValor.Size = new System.Drawing.Size(223, 20);
-            this.codPValor.TabIndex = 18;
-            // 
             // codigoP_label
             // 
             this.codigoP_label.AutoSize = true;
@@ -93,13 +86,6 @@
             this.codigoP_label.Size = new System.Drawing.Size(88, 13);
             this.codigoP_label.TabIndex = 17;
             this.codigoP_label.Text = "Codigo Paciente:";
-            // 
-            // codigoMValor
-            // 
-            this.codigoMValor.Location = new System.Drawing.Point(166, 74);
-            this.codigoMValor.Name = "codigoMValor";
-            this.codigoMValor.Size = new System.Drawing.Size(223, 20);
-            this.codigoMValor.TabIndex = 16;
             // 
             // codigoM_label
             // 
@@ -111,28 +97,44 @@
             this.codigoM_label.Text = "Codigo Medico:";
             this.codigoM_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dataValor
+            // dataHoraConsulta
             // 
-            this.dataValor.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dataValor.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dataValor.Location = new System.Drawing.Point(166, 163);
-            this.dataValor.Name = "dataValor";
-            this.dataValor.Size = new System.Drawing.Size(223, 20);
-            this.dataValor.TabIndex = 30;
+            this.dataHoraConsulta.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dataHoraConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataHoraConsulta.Location = new System.Drawing.Point(166, 163);
+            this.dataHoraConsulta.Name = "dataHoraConsulta";
+            this.dataHoraConsulta.Size = new System.Drawing.Size(223, 20);
+            this.dataHoraConsulta.TabIndex = 30;
+            // 
+            // medicos_combo
+            // 
+            this.medicos_combo.FormattingEnabled = true;
+            this.medicos_combo.Location = new System.Drawing.Point(166, 78);
+            this.medicos_combo.Name = "medicos_combo";
+            this.medicos_combo.Size = new System.Drawing.Size(223, 21);
+            this.medicos_combo.TabIndex = 31;
+            // 
+            // pacientes_combo
+            // 
+            this.pacientes_combo.FormattingEnabled = true;
+            this.pacientes_combo.Location = new System.Drawing.Point(164, 123);
+            this.pacientes_combo.Name = "pacientes_combo";
+            this.pacientes_combo.Size = new System.Drawing.Size(225, 21);
+            this.pacientes_combo.TabIndex = 32;
             // 
             // ConsultasCriarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 276);
-            this.Controls.Add(this.dataValor);
+            this.Controls.Add(this.pacientes_combo);
+            this.Controls.Add(this.medicos_combo);
+            this.Controls.Add(this.dataHoraConsulta);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.salvar);
             this.Controls.Add(this.titulo_label);
             this.Controls.Add(this.data_label);
-            this.Controls.Add(this.codPValor);
             this.Controls.Add(this.codigoP_label);
-            this.Controls.Add(this.codigoMValor);
             this.Controls.Add(this.codigoM_label);
             this.Name = "ConsultasCriarView";
             this.Text = "ConsultasCriarView";
@@ -147,10 +149,10 @@
         private System.Windows.Forms.Button salvar;
         private System.Windows.Forms.Label titulo_label;
         private System.Windows.Forms.Label data_label;
-        private System.Windows.Forms.TextBox codPValor;
         private System.Windows.Forms.Label codigoP_label;
-        private System.Windows.Forms.TextBox codigoMValor;
         private System.Windows.Forms.Label codigoM_label;
-        private System.Windows.Forms.DateTimePicker dataValor;
+        private System.Windows.Forms.DateTimePicker dataHoraConsulta;
+        private System.Windows.Forms.ComboBox medicos_combo;
+        private System.Windows.Forms.ComboBox pacientes_combo;
     }
 }

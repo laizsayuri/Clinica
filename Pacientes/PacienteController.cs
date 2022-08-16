@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Clinica.Pacientes
 {
-    public class PacienteController
+    public class PacienteController : IController
     {
         public void Listar()
         {

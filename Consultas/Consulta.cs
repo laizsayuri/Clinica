@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinica.Medicos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace Clinica.Consultas
 {
     public class Consulta
     {
-        public int Codm { get; set; }
-        public int Codp{ get; set; }
+        public Paciente Paciente { get; set; }
+        public Medico Medico { get; set; }
         public DateTime DataHora { get; set; }
         public string Data { get
             {
@@ -30,9 +31,11 @@ namespace Clinica.Consultas
             }
         }
 
-        public override string ToString()
+        public Consulta()
         {
-            return Codm + "\n" + Codp + "\n" + Data + "\n" + Hora + "\n";
+            Paciente = new Paciente();
+            Medico = new Medico();
         }
+        
     }
 }

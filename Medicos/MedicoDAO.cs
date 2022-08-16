@@ -80,7 +80,38 @@ namespace Clinica.Medicos
 
         public object Read(object chave)
         {
-            throw new NotImplementedException();
+            string sql = "select * from medicos where codm = @codm";
+            BancoDeDados bd = new BancoDeDados();
+            Medico medico = (Medico)chave;
+
+            Medico doBanco = new Medico();
+            int nroa;
+            MySqlCommand cmd = new MySqlCommand(sql, bd.conectar());
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@codm", medico.Codm);
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+
+                    doBanco.Codm = int.Parse(rdr[0].ToString());
+                    doBanco.Nome = rdr[1].ToString();
+                    doBanco.Idade = int.Parse(rdr[2].ToString());
+                    doBanco.Especialidade = rdr[3].ToString();
+                    doBanco.Cpf = rdr[4].ToString();
+                    doBanco.Cidade = rdr[5].ToString();
+                    int.TryParse(rdr[6].ToString(), out nroa);
+                    doBanco.Nroa = nroa;
+
+                }
+                rdr.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            return doBanco;
         }
 
         public object Update(object objeto)
