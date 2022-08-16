@@ -24,8 +24,8 @@ namespace Clinica
 
         private void funcionarioBtn_Click(object sender, EventArgs e)
         {
-            FuncionariosView tela = new FuncionariosView();
-            tela.Show();
+            FuncionarioController funcionarioController = new FuncionarioController();
+            funcionarioController.Listar();
             Hide();
         }
 

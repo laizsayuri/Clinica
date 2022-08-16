@@ -29,7 +29,6 @@ namespace Clinica.Medicos
         {
             Ambulatorio ambulatorio = new Ambulatorio
             {
-                Nroa = int.Parse(nroaValor.Text),
                 Andar = andarValor.Text,
                 Capacidade = int.Parse(capacidadeValor.Text)
             };

@@ -144,6 +144,8 @@
     <Compile Include="Funcionarios\Dependentes\DependentesView.Designer.cs">
       <DependentUpon>DependentesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\FuncionarioController.cs" />
+    <Compile Include="Funcionarios\FuncionarioDAO.cs" />
     <Compile Include="Funcionarios\FuncionariosCriarView.cs">
       <SubType>Form</SubType>
     </Compile>

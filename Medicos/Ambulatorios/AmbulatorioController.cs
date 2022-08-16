@@ -54,7 +54,7 @@ namespace Clinica.Medicos.Ambulatorios
             AmbulatorioDAO ambulatorioDAO = new AmbulatorioDAO();
             ambulatorioDAO.Delete(ambulatorio);
 
-            new MedicosView(ambulatorioDAO.All()).Show();
-        }
+            new AmbulatoriosView(ambulatorioDAO.All()).Show();
+        }        
     }
 }

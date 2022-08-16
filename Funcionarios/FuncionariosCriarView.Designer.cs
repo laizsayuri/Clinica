@@ -159,6 +159,7 @@
             // 
             // codigoValor
             // 
+            this.codigoValor.Enabled = false;
             this.codigoValor.Location = new System.Drawing.Point(177, 132);
             this.codigoValor.Name = "codigoValor";
             this.codigoValor.Size = new System.Drawing.Size(223, 20);

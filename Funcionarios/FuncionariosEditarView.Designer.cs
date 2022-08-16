@@ -71,6 +71,7 @@
             this.button5.TabIndex = 50;
             this.button5.Text = "Voltar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // salvar
             // 
@@ -174,6 +175,7 @@
             // 
             // codigoValor
             // 
+            this.codigoValor.Enabled = false;
             this.codigoValor.Location = new System.Drawing.Point(177, 132);
             this.codigoValor.Name = "codigoValor";
             this.codigoValor.Size = new System.Drawing.Size(223, 20);

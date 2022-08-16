@@ -31,12 +31,17 @@ namespace Clinica.Funcionarios
                 Salario = decimal.Parse(salarioValor.Text),
                 Cargo = cargoValor.Text
             };
+            
+            FuncionarioController controller = new FuncionarioController();
+            controller.Salvar(funcionario);
+            Close();
+           
+        }
 
-            ArrayList funcionarios = new ArrayList();
-            funcionarios.Add(funcionario);
-
-            FuncionariosView listagem = new FuncionariosView(funcionarios);
-            listagem.Show();
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FuncionarioController funcionarioController = new FuncionarioController();
+            funcionarioController.Listar();
             Close();
         }
     }

@@ -12,28 +12,27 @@ namespace Clinica.Funcionarios
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FuncionariosView funcionario = new FuncionariosView();
-            funcionario.Show();
-            Close();
+            FuncionarioController funcionarioController = new FuncionarioController();
+            funcionarioController.Listar();
+            Close();            
         }
 
         private void salvar_Click(object sender, EventArgs e)
         {
             Funcionario funcionario = new Funcionario
-            {
-                Codf = int.Parse(codigoValor.Text),
+            {                
                 Nome = nomeValor.Text,
                 Idade = int.Parse(idadeValor.Text),
-                Cidade = cidadeValor.Text,
                 Cpf = cpfValor.Text,
+                Cidade = cidadeValor.Text,                
                 Salario = decimal.Parse(salarioValor.Text),
                 Cargo = cargoValor.Text
             };
 
-            FuncionariosEditarView funcionarioEditar = new FuncionariosEditarView(funcionario);
+            FuncionarioController controller = new FuncionarioController();
 
-            funcionarioEditar.Show();
-            Close();
+            controller.Criar(funcionario);
+            Hide();            
         }
     }
 }
