@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.listagem = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.filtroValor = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.codp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.filtroValor = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.campoFiltro = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +61,39 @@
             this.listagem.Size = new System.Drawing.Size(623, 163);
             this.listagem.TabIndex = 0;
             // 
+            // codp
+            // 
+            this.codp.HeaderText = "Codigo";
+            this.codp.Name = "codp";
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            // 
+            // idade
+            // 
+            this.idade.HeaderText = "Idade";
+            this.idade.Name = "idade";
+            // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // cpf
+            // 
+            this.cpf.HeaderText = "CPF";
+            this.cpf.Name = "cpf";
+            // 
+            // doenca
+            // 
+            this.doenca.HeaderText = "Doença";
+            this.doenca.Name = "doenca";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 26);
+            this.button1.Location = new System.Drawing.Point(268, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -72,9 +103,9 @@
             // 
             // filtroValor
             // 
-            this.filtroValor.Location = new System.Drawing.Point(139, 28);
+            this.filtroValor.Location = new System.Drawing.Point(140, 26);
             this.filtroValor.Name = "filtroValor";
-            this.filtroValor.Size = new System.Drawing.Size(100, 20);
+            this.filtroValor.Size = new System.Drawing.Size(122, 20);
             this.filtroValor.TabIndex = 2;
             // 
             // button2
@@ -117,53 +148,34 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // listBox1
+            // campoFiltro
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.campoFiltro.FormattingEnabled = true;
+            this.campoFiltro.Items.AddRange(new object[] {
             "Nome",
             "CPF"});
-            this.listBox1.Location = new System.Drawing.Point(13, 29);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 17);
-            this.listBox1.TabIndex = 8;
+            this.campoFiltro.Location = new System.Drawing.Point(13, 26);
+            this.campoFiltro.Name = "campoFiltro";
+            this.campoFiltro.Size = new System.Drawing.Size(121, 21);
+            this.campoFiltro.TabIndex = 9;
             // 
-            // codp
+            // button6
             // 
-            this.codp.HeaderText = "Codigo";
-            this.codp.Name = "codp";
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            // 
-            // idade
-            // 
-            this.idade.HeaderText = "Idade";
-            this.idade.Name = "idade";
-            // 
-            // cidade
-            // 
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            // 
-            // cpf
-            // 
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            // 
-            // doenca
-            // 
-            this.doenca.HeaderText = "Doença";
-            this.doenca.Name = "doenca";
+            this.button6.Location = new System.Drawing.Point(349, 23);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Limpar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // PacientesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 278);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.campoFiltro);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -188,12 +200,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codp;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn idade;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
         private System.Windows.Forms.DataGridViewTextBoxColumn doenca;
+        private System.Windows.Forms.ComboBox campoFiltro;
+        private System.Windows.Forms.Button button6;
     }
 }

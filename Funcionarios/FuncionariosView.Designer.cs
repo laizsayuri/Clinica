@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.filtroValor = new System.Windows.Forms.TextBox();
+            this.valorFiltro = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listagem = new System.Windows.Forms.DataGridView();
             this.codf = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,19 +43,10 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarBtn = new System.Windows.Forms.Button();
             this.dependentesBtn = new System.Windows.Forms.Button();
+            this.campoFiltro = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listagem)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Nome",
-            "CPF"});
-            this.listBox1.Location = new System.Drawing.Point(16, 30);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 17);
-            this.listBox1.TabIndex = 16;
             // 
             // button5
             // 
@@ -88,12 +78,12 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // filtroValor
+            // valorFiltro
             // 
-            this.filtroValor.Location = new System.Drawing.Point(142, 29);
-            this.filtroValor.Name = "filtroValor";
-            this.filtroValor.Size = new System.Drawing.Size(100, 20);
-            this.filtroValor.TabIndex = 11;
+            this.valorFiltro.Location = new System.Drawing.Point(142, 29);
+            this.valorFiltro.Name = "valorFiltro";
+            this.valorFiltro.Size = new System.Drawing.Size(100, 20);
+            this.valorFiltro.TabIndex = 11;
             // 
             // button1
             // 
@@ -177,18 +167,40 @@
             this.dependentesBtn.UseVisualStyleBackColor = true;
             this.dependentesBtn.Click += new System.EventHandler(this.dependentesBtn_Click);
             // 
+            // campoFiltro
+            // 
+            this.campoFiltro.FormattingEnabled = true;
+            this.campoFiltro.Items.AddRange(new object[] {
+            "Nome",
+            "CPF"});
+            this.campoFiltro.Location = new System.Drawing.Point(16, 29);
+            this.campoFiltro.Name = "campoFiltro";
+            this.campoFiltro.Size = new System.Drawing.Size(121, 21);
+            this.campoFiltro.TabIndex = 20;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(329, 27);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 21;
+            this.button6.Text = "Limpar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // FuncionariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 271);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.campoFiltro);
             this.Controls.Add(this.dependentesBtn);
             this.Controls.Add(this.editarBtn);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.filtroValor);
+            this.Controls.Add(this.valorFiltro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listagem);
             this.Name = "FuncionariosView";
@@ -200,12 +212,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox filtroValor;
+        private System.Windows.Forms.TextBox valorFiltro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView listagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn codf;
@@ -217,5 +227,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.Button editarBtn;
         private System.Windows.Forms.Button dependentesBtn;
+        private System.Windows.Forms.ComboBox campoFiltro;
+        private System.Windows.Forms.Button button6;
     }
 }

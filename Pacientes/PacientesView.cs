@@ -36,7 +36,53 @@ namespace Clinica
         // filtrar
         private void button1_Click(object sender, EventArgs e)
         {
+            int x = 0;
+            string nomeLista;
+            string valorFiltro = filtroValor.Text;
+            string nomeFiltro = campoFiltro.Text;
 
+            if (nomeFiltro.Equals(""))
+            {
+                MessageBox.Show("Selecione um campo para filtrar");
+                return;
+            }
+            else if (valorFiltro.Equals(""))
+            {
+                MessageBox.Show("Digite um valor para filtrar");
+                return;
+            }
+
+            switch (nomeFiltro)
+            {
+                case "Nome":
+                    do
+                    {
+                        nomeLista = this.listagem.Rows[x].Cells[1].Value.ToString();
+                        if (!nomeLista.ToUpper().Contains(valorFiltro.ToUpper()))
+                        {
+                            this.listagem.Rows.RemoveAt(x);
+                            x = x - 1;
+                        }
+
+                        x++;
+
+                    } while (x < this.listagem.Rows.Count - 1);
+
+                    break;
+                case "CPF":
+                    do
+                    {
+                        nomeLista = this.listagem.Rows[x].Cells[4].Value.ToString();
+                        if (!nomeLista.ToUpper().Contains(valorFiltro.ToUpper()))
+                        {
+                            this.listagem.Rows.RemoveAt(x);
+                            x--;
+                        }
+                        x++;
+                    } while (x < this.listagem.Rows.Count - 1);
+                    break;
+            }
+            this.listagem.Update();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -103,6 +149,13 @@ namespace Clinica
             controller.Deletar(paciente);
             
             Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Close();
+            PacienteController controller = new PacienteController();
+            controller.Listar();
         }
     }
 }

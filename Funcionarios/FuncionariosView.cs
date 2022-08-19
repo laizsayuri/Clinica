@@ -32,10 +32,49 @@ namespace Clinica.Funcionarios
             }            
         }
 
+        private void filtro(int index, string valor)
+        {
+            string nomeLista;
+            int x = 0;
+            do
+            {
+                nomeLista = this.listagem.Rows[x].Cells[index].Value.ToString();
+                if (!nomeLista.ToUpper().Contains(valor.ToUpper()))
+                {
+                    this.listagem.Rows.RemoveAt(x);
+                    x--;
+                }
+                x++;
+            } while (x < this.listagem.Rows.Count - 1);
+        }
+
         // filtrar
         private void button1_Click(object sender, EventArgs e)
         {
+            string campoFiltro = this.campoFiltro.Text;
+            string valorFiltro = this.valorFiltro.Text;
 
+            int x = 0;
+
+            if (campoFiltro.Equals(""))
+            {
+                MessageBox.Show("Escolha um campo para o filtro");
+                return;
+            }
+            if (valorFiltro.Equals(""))
+            {
+                MessageBox.Show("Digite um valor para o filtro");
+                return;
+            }
+            switch (campoFiltro)
+            {
+                case "Nome":
+                    this.filtro(1, valorFiltro);
+                    break;
+                case "CPF":
+                    this.filtro(4, valorFiltro);
+                    break;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -112,6 +151,13 @@ namespace Clinica.Funcionarios
             controller.Deletar(funcionario);
 
             Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Close();
+            FuncionarioController controller = new FuncionarioController();
+            controller.Listar();
         }
     }
 }

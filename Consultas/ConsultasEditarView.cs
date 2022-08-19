@@ -28,7 +28,7 @@ namespace Clinica.Consultas
             codigoMValor.SelectedIndex = medicoIndex;
             codPValor.SelectedIndex = pacienteIndex;
 
-            dataHoraConsulta.Value = consulta.DataHora; 
+            dataHoraConsulta.Value = consulta.DataHora;
         }
 
         private void salvar_Click(object sender, EventArgs e)
